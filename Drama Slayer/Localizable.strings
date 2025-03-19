@@ -1,0 +1,61 @@
+// MARK: - General
+
+// Onboarding VC
+
+"uniqueLabel" = "Thousands of unique series in our app!";
+"uniqueSubLabel" = "Enjoy a huge catalogue of TV series to suit every mood and time.";
+"sharpLabel" = "Sharp dramas and gripping stories!";
+"sharpSubLabel" = "Immerse yourself in series that keep you in suspense until the last frame.";
+"passionLabel" = "Passion, drama and unrequited love!";
+"passionSubLabel" = "Stories of first love, heartbreak and forbidden feelings that will not leave indifferent.";
+"rateLabel" = "Rate our app in the AppStore";
+"rateSubLabel" = "Did you like our app? Share your impressions!";
+"notificationsLabel" = "Don't miss new trends";
+"notificationsSubLabel" = "Allow notifications";
+"maybeLater" = "Maybe later";
+"continue" = "Continue";
+
+// Subcription VC
+
+"cancelAnytime" = "Cancel anytime";
+"yearly" = "Yearly";
+"restoreLabel" = "Restore Purchases";
+"subFirstLabel" = "favourite TV series without limits!";
+"subSecondLabel" = "Unlock all features with Pro";
+"bestOffer" = "Best Offer";
+"privacyPolicy" = "Privacy Policy";
+"termsOfUse" = "Terms of Use";
+"failRestoreLabel" = "No Subscription Found";
+"failRestoreMessage" = "We couldn’t find an active subscription for your account";
+"weekly" = "Weekly";
+
+// TabBar VC
+
+"home" = "Home";
+"discover" = "Discover";
+"myList" = "My List";
+
+// Home VC
+
+"cancel" = "Cancel";
+"search" = "Search";
+"topLabel" = "Top TV series by search";
+"noRelated" = "No related content";
+"share" = "Share";
+"delete" = "Delete";
+
+// Discover
+
+"continueWatching" = "Continue watching";
+
+// My List
+
+"favourites" = "Favourites";
+"recentViews" = "Recent Views";
+"noSeriesLabel" = "No TV series";
+"noSeriesSubLabel" = "Add your favourite TV series so you don't lose them";
+"addSeries" = "Add a TV series";
+"select" = "Select";
+"watching" = "Watching";
+"deleteTV" = "Delete TV series";
+"deleteTVSublabel" = "Are you sure you want to delete the selected shows?";
