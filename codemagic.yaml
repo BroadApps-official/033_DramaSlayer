@@ -27,10 +27,6 @@ workflows:
           xcodebuild -resolvePackageDependencies \
             -project "$CM_BUILD_DIR/$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME"
-      - name: Generate R.swift resources
-        script: |
-          export PATH="$HOME/.mint/bin:$PATH"
-          rswift generate "$CM_BUILD_DIR/Drama Slayer/R.generated.swift"
       - name: Set up provisioning profiles settings on Xcode project
         script: xcode-project use-profiles
       - name: Increment build number
