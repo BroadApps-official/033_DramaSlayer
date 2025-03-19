@@ -19,11 +19,18 @@ workflows:
       - name: Disable plugin validation
         script: |
           defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
+      - name: Ensure R.swift is installed
+        script: |
+          which rswift || brew install rswift
       - name: Resolve Swift Package Manager dependencies
         script: |
           xcodebuild -resolvePackageDependencies \
             -project "$CM_BUILD_DIR/$XCODE_PROJECT" \
             -scheme "$XCODE_SCHEME"
+      - name: Generate R.swift resources
+        script: |
+          export PATH="$HOME/.mint/bin:$PATH"
+          rswift generate "$CM_BUILD_DIR/Drama Slayer/R.generated.swift"
       - name: Set up provisioning profiles settings on Xcode project
         script: xcode-project use-profiles
       - name: Increment build number
@@ -31,11 +38,15 @@ workflows:
           cd $CM_BUILD_DIR
           LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID")
           agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
+      - name: Clean DerivedData
+        script: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Build ipa for distribution
         script: |
-          xcode-project build-ipa \
-            --project "$CM_BUILD_DIR/$XCODE_PROJECT" \
-            --scheme "$XCODE_SCHEME"
+          set -o pipefail && xcodebuild -project "$CM_BUILD_DIR/$XCODE_PROJECT" \
+          -scheme "$XCODE_SCHEME" \
+          -archivePath "$CM_BUILD_DIR/build/ios/Drama_Slayer.xcarchive" archive \
+          | tee xcodebuild.log | xcpretty
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
@@ -50,14 +61,8 @@ workflows:
           failure: false
       app_store_connect:
         auth: integration
-
-        # Configuration related to TestFlight (optional)
-        # Note: This action is performed during post-processing.
         submit_to_testflight: true
-        beta_groups: # Specify the names of beta tester groups that will get access to the build once it has passed beta review.
+        beta_groups:
           - group name 1
           - group name 2
-
-        # Configuration related to App Store (optional)
-        # Note: This action is performed during post-processing.
         submit_to_app_store: false
