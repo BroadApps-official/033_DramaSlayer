@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E7011C372C1C8AA400B3A4D7 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7011C362C1C8AA400B3A4D7 /* UIDevice.swift */; };
 		E70B0CED2D6DF70700530DD0 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = E70B0CEC2D6DF70700530DD0 /* RswiftLibrary */; };
-		E70B0CEF2D6DF70700530DD0 /* rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E70B0CEE2D6DF70700530DD0 /* rswift */; settings = {ATTRIBUTES = (Required, ); }; };
 		E70B0D072D6DFD3A00530DD0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E70B0D062D6DFD3A00530DD0 /* Localizable.strings */; };
 		E71D00752CE3676C0011C8AF /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D00742CE3676C0011C8AF /* PurchaseManager.swift */; };
 		E73FD54F2CCA68E200F7C940 /* UIFontExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FD54E2CCA68E200F7C940 /* UIFontExtention.swift */; };
@@ -110,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E70B0CEF2D6DF70700530DD0 /* rswift in Frameworks */,
 				E75E7D0D2D50C67A00F293F1 /* ApphudSDK in Frameworks */,
 				E70B0CED2D6DF70700530DD0 /* RswiftLibrary in Frameworks */,
 				E75E7D0A2D50C66B00F293F1 /* SnapKit in Frameworks */,
@@ -393,7 +391,6 @@
 				E75E7D092D50C66B00F293F1 /* SnapKit */,
 				E75E7D0C2D50C67A00F293F1 /* ApphudSDK */,
 				E70B0CEC2D6DF70700530DD0 /* RswiftLibrary */,
-				E70B0CEE2D6DF70700530DD0 /* rswift */,
 			);
 			productName = SportCoach;
 			productReference = E759BED72C1478D500FC2CCB /* Drama Slayer.app */;
@@ -752,11 +749,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E70B0CEB2D6DF70700530DD0 /* XCRemoteSwiftPackageReference "R" */;
 			productName = RswiftLibrary;
-		};
-		E70B0CEE2D6DF70700530DD0 /* rswift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E70B0CEB2D6DF70700530DD0 /* XCRemoteSwiftPackageReference "R" */;
-			productName = rswift;
 		};
 		E70B0D0C2D6DFDF700530DD0 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
