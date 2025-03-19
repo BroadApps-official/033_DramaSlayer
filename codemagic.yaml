@@ -16,6 +16,9 @@ workflows:
         APP_STORE_APPLE_ID: 6743441764
       xcode: latest # <-- set to specific version e.g. 14.3, 15.0 to avoid unexpected updates.
     scripts:
+      - name: Disable plugin validation
+        script: |
+          defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
       - name: Resolve Swift Package Manager dependencies
         script: |
           xcodebuild -resolvePackageDependencies \
